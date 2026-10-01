@@ -1,0 +1,117 @@
+{
+  "version": "AURA_SMC_BOT_v4.3",
+  "symbol": "XAUUSDm",
+  "timeframe": "M5",
+  "start": "2026-05-01",
+  "end": "2026-07-31",
+  "rr": 2.0,
+  "lookahead_protection": true,
+  "entry_model": {
+    "touch_alone_enters": false,
+    "normal_entry": "touch + reversal candle",
+    "crossed_entry": "cross + reversal + reentry >= 70%",
+    "reentry_depth_percent": 70.0
+  },
+  "mtf_model": {
+    "enabled": true,
+    "stack": "D1 -> H1 -> M15 -> M5",
+    "weights": {
+      "D1": 3.0,
+      "H1": 2.0,
+      "M15": 1.5,
+      "M5": 1.0
+    }
+  },
+  "sl_model": {
+    "priority": "confirmed retracement swing -> fallback extreme",
+    "minimum_distance": "max(fixed_buffer, OB_range*min_sl_ob_fraction, median_range*min_sl_range_multiple)"
+  },
+  "tp_model": {
+    "rr": 2.0,
+    "formula": "TP=Entry+direction*2*abs(Entry-SL)",
+    "prior_target_filter": false
+  },
+  "metrics": {
+    "trades": 11,
+    "wins": 3,
+    "losses": 8,
+    "winrate_percent": 27.27,
+    "net_R": -2.0,
+    "expectancy_R": -0.1818,
+    "profit_factor": 0.75
+  },
+  "max_drawdown_R": 8.0,
+  "diagnostics": {
+    "sweeps": 2249,
+    "ob_found": 48,
+    "ob_touches": 40,
+    "entries": 11,
+    "normal_reversal_entries": 1,
+    "crossed_reentry_entries": 10,
+    "mtf_rejected": 1734,
+    "target_unreachable_entries": 5
+  },
+  "context_analytics": {
+    "direction": {
+      "bullish": {
+        "trades": 2,
+        "wins": 1,
+        "losses": 1,
+        "winrate_percent": 50.0,
+        "net_R": 1.0,
+        "expectancy_R": 0.5,
+        "profit_factor": 2.0
+      },
+      "bearish": {
+        "trades": 9,
+        "wins": 2,
+        "losses": 7,
+        "winrate_percent": 22.22,
+        "net_R": -3.0,
+        "expectancy_R": -0.3333,
+        "profit_factor": 0.5714
+      }
+    },
+    "entry_mode": {
+      "normal_reversal_inside_ob": {
+        "trades": 1,
+        "wins": 1,
+        "losses": 0,
+        "winrate_percent": 100.0,
+        "net_R": 2.0,
+        "expectancy_R": 2.0,
+        "profit_factor": null
+      },
+      "crossed_ob_reentry_70pct": {
+        "trades": 10,
+        "wins": 2,
+        "losses": 8,
+        "winrate_percent": 20.0,
+        "net_R": -4.0,
+        "expectancy_R": -0.4,
+        "profit_factor": 0.5
+      }
+    },
+    "target_reachable": {
+      "true": {
+        "trades": 6,
+        "wins": 0,
+        "losses": 6,
+        "winrate_percent": 0.0,
+        "net_R": -6.0,
+        "expectancy_R": -1.0,
+        "profit_factor": 0.0
+      },
+      "false": {
+        "trades": 5,
+        "wins": 3,
+        "losses": 2,
+        "winrate_percent": 60.0,
+        "net_R": 4.0,
+        "expectancy_R": 0.8,
+        "profit_factor": 3.0
+      }
+    }
+  },
+  "data_source": "MetaTrader 5 terminal"
+}
