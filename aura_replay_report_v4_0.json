@@ -1,0 +1,158 @@
+{
+  "version": "AURA_SMC_BOT_v4.0",
+  "symbol": "XAUUSDm",
+  "timeframe": "M5",
+  "start": "2026-05-01",
+  "end": "2026-07-31",
+  "rr": 2.0,
+  "min_rr": 2.0,
+  "risk_R": 1.0,
+  "lookahead_protection": true,
+  "ob_zone": "full_candle_range_including_wicks",
+  "ob_freshness": "max_100_bars_until_valid_retest",
+  "pre_retest_invalidation": "close_through_ob_boundary",
+  "wick_only_touch_consumes_ob": false,
+  "retest_score_rejection_consumes_ob": false,
+  "max_concurrent_trades": 1,
+  "entry_confirmation": "close_inside",
+  "ambiguous_mode": "neutral",
+  "trades": 21,
+  "wins": 5,
+  "losses": 16,
+  "winrate_percent": 23.81,
+  "net_R": -6.0,
+  "expectancy_R": -0.2857,
+  "profit_factor": 0.625,
+  "max_drawdown_R": 7.0,
+  "recovery_factor": -0.8571,
+  "max_win_streak": 1,
+  "max_loss_streak": 7,
+  "scenario_conservative": {
+    "trades": 22,
+    "wins": 5,
+    "losses": 17,
+    "winrate_percent": 22.73,
+    "net_R": -7.0,
+    "expectancy_R": -0.3182,
+    "profit_factor": 0.5882
+  },
+  "scenario_optimistic": {
+    "trades": 22,
+    "wins": 6,
+    "losses": 16,
+    "winrate_percent": 27.27,
+    "net_R": -4.0,
+    "expectancy_R": -0.1818,
+    "profit_factor": 0.75
+  },
+  "diagnostics": {
+    "sweeps": 2249,
+    "sweep_expired": 2148,
+    "fvg_after_sweep": 471,
+    "structure_break": 471,
+    "ob_found": 100,
+    "ob_touches": 448,
+    "outside_close_touches": 215,
+    "retest_analyzed": 233,
+    "retest_score_rejected": 210,
+    "entry_confirmation_rejected": 0,
+    "ob_score_rejected": 1,
+    "ob_invalidated": 72,
+    "entries": 22,
+    "median_bars_ob_to_first_retest": 18.5,
+    "max_bars_ob_to_first_retest": 1316
+  },
+  "rejection_funnel": {
+    "no_structure_break": 1268,
+    "weak_displacement_body": 825,
+    "not_adjacent_to_fvg": 234,
+    "OB_TOUCH_OUTSIDE_CLOSE": 215,
+    "retest_score_below_threshold": 210,
+    "no_opposite_candle": 89,
+    "close_through_ob_before_valid_retest": 72,
+    "duplicate_setup": 48,
+    "wrong_displacement_direction": 10,
+    "ob_score_below_threshold": 1
+  },
+  "context_analytics": {
+    "direction": {
+      "bearish": {
+        "trades": 9,
+        "wins": 2,
+        "winrate_percent": 22.22,
+        "net_R": -3.0
+      },
+      "bullish": {
+        "trades": 12,
+        "wins": 3,
+        "winrate_percent": 25.0,
+        "net_R": -3.0
+      }
+    },
+    "weekday": {
+      "Friday": {
+        "trades": 3,
+        "wins": 1,
+        "winrate_percent": 33.33,
+        "net_R": 0.0
+      },
+      "Monday": {
+        "trades": 5,
+        "wins": 0,
+        "winrate_percent": 0.0,
+        "net_R": -5.0
+      },
+      "Thursday": {
+        "trades": 2,
+        "wins": 2,
+        "winrate_percent": 100.0,
+        "net_R": 4.0
+      },
+      "Tuesday": {
+        "trades": 6,
+        "wins": 2,
+        "winrate_percent": 33.33,
+        "net_R": 0.0
+      },
+      "Wednesday": {
+        "trades": 5,
+        "wins": 0,
+        "winrate_percent": 0.0,
+        "net_R": -5.0
+      }
+    },
+    "bars_since_ob": {
+      "11-20": {
+        "trades": 6,
+        "wins": 2,
+        "winrate_percent": 33.33,
+        "net_R": 0.0
+      },
+      "21-50": {
+        "trades": 5,
+        "wins": 1,
+        "winrate_percent": 20.0,
+        "net_R": -2.0
+      },
+      "4-10": {
+        "trades": 5,
+        "wins": 2,
+        "winrate_percent": 40.0,
+        "net_R": 1.0
+      },
+      "51-100": {
+        "trades": 4,
+        "wins": 0,
+        "winrate_percent": 0.0,
+        "net_R": -4.0
+      },
+      ">100": {
+        "trades": 1,
+        "wins": 0,
+        "winrate_percent": 0.0,
+        "net_R": -1.0
+      }
+    }
+  },
+  "data_source": "MetaTrader 5 terminal"
+}
