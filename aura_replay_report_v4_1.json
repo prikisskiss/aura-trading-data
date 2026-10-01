@@ -1,0 +1,219 @@
+{
+  "version": "AURA_SMC_BOT_v4.1",
+  "symbol": "XAUUSDm",
+  "timeframe": "M5",
+  "start": "2026-05-01",
+  "end": "2026-07-31",
+  "rr": 2.0,
+  "min_rr": 2.0,
+  "risk_R": 1.0,
+  "lookahead_protection": true,
+  "ob_zone": "full_candle_range_including_wicks",
+  "entry_model": {
+    "touch_alone_enters": false,
+    "normal_entry": "OB touch + reversal candle in OB direction",
+    "crossed_entry": "OB crossed + reversal + close reentry at >= 70.0% OB depth",
+    "reentry_depth_percent": 70.0,
+    "reversal_min_body_ratio": 0.5
+  },
+  "sl_model": {
+    "priority": [
+      "retracement extreme before entry",
+      "previous swing before OB",
+      "OB boundary fallback"
+    ],
+    "minimum_distance": "max(fixed_buffer, OB_range * min_sl_ob_fraction, median_range * min_sl_range_multiple)",
+    "min_sl_ob_fraction": 0.1,
+    "min_sl_range_multiple": 0.25
+  },
+  "tp_model": {
+    "formula": "TP = Entry + direction * 2 * abs(Entry-SL)",
+    "rr": 2.0,
+    "prior_target_reference": true,
+    "require_prior_target": false
+  },
+  "retest_rule": "touch does not enter; reversal confirmation required",
+  "ambiguous_mode": "neutral",
+  "total_trades": 22,
+  "wins": 7,
+  "losses": 15,
+  "ambiguous_trades": 0,
+  "winrate_percent": 31.82,
+  "net_R": -1.0,
+  "average_R": -0.0455,
+  "expectancy_R": -0.0455,
+  "profit_factor": 0.9333,
+  "max_drawdown_R": 7.0,
+  "recovery_factor": -0.1429,
+  "max_win_streak": 2,
+  "max_loss_streak": 5,
+  "scenario_conservative": {
+    "trades": 22,
+    "wins": 7,
+    "losses": 15,
+    "winrate_percent": 31.82,
+    "net_R": -1.0,
+    "expectancy_R": -0.0455,
+    "profit_factor": 0.9333
+  },
+  "scenario_optimistic": {
+    "trades": 22,
+    "wins": 7,
+    "losses": 15,
+    "winrate_percent": 31.82,
+    "net_R": -1.0,
+    "expectancy_R": -0.0455,
+    "profit_factor": 0.9333
+  },
+  "diagnostics": {
+    "sweeps": 2249,
+    "fvg_after_sweep": 471,
+    "structure_break": 471,
+    "ob_found": 100,
+    "ob_touches": 80,
+    "entry_wait_reversal": 212,
+    "entry_wait_70_reentry": 1565,
+    "ob_crossed_after_touch": 2315,
+    "normal_reversal_entries": 3,
+    "crossed_reentry_entries": 19,
+    "reversal_entries": 22,
+    "ob_expired": 10,
+    "ob_invalidated": 10,
+    "retest_score_rejected": 0,
+    "ob_score_rejected": 1,
+    "max_concurrent_rejected": 32,
+    "rr2_target_rejected": 0,
+    "invalid_sl_rejected": 0,
+    "median_bars_ob_to_first_retest": 123.0,
+    "max_bars_ob_to_first_retest": 3509
+  },
+  "context_analytics": {
+    "direction": {
+      "bearish": {
+        "trades": 12,
+        "wins": 6,
+        "winrate_percent": 50.0,
+        "net_R": 6.0
+      },
+      "bullish": {
+        "trades": 10,
+        "wins": 1,
+        "winrate_percent": 10.0,
+        "net_R": -7.0
+      }
+    },
+    "weekday": {
+      "Friday": {
+        "trades": 4,
+        "wins": 1,
+        "winrate_percent": 25.0,
+        "net_R": -1.0
+      },
+      "Monday": {
+        "trades": 7,
+        "wins": 4,
+        "winrate_percent": 57.14,
+        "net_R": 5.0
+      },
+      "Thursday": {
+        "trades": 4,
+        "wins": 1,
+        "winrate_percent": 25.0,
+        "net_R": -1.0
+      },
+      "Tuesday": {
+        "trades": 5,
+        "wins": 1,
+        "winrate_percent": 20.0,
+        "net_R": -2.0
+      },
+      "Wednesday": {
+        "trades": 2,
+        "wins": 0,
+        "winrate_percent": 0.0,
+        "net_R": -2.0
+      }
+    },
+    "entry_mode": {
+      "crossed_ob_reentry_70pct": {
+        "trades": 19,
+        "wins": 7,
+        "winrate_percent": 36.84,
+        "net_R": 2.0
+      },
+      "normal_reversal_inside_ob": {
+        "trades": 3,
+        "wins": 0,
+        "winrate_percent": 0.0,
+        "net_R": -3.0
+      }
+    },
+    "sl_source": {
+      "retracement_high": {
+        "trades": 12,
+        "wins": 6,
+        "winrate_percent": 50.0,
+        "net_R": 6.0
+      },
+      "retracement_low": {
+        "trades": 10,
+        "wins": 1,
+        "winrate_percent": 10.0,
+        "net_R": -7.0
+      }
+    },
+    "bars_since_ob": {
+      "101-1000": {
+        "trades": 8,
+        "wins": 2,
+        "winrate_percent": 25.0,
+        "net_R": -2.0
+      },
+      "11-20": {
+        "trades": 2,
+        "wins": 1,
+        "winrate_percent": 50.0,
+        "net_R": 1.0
+      },
+      "21-50": {
+        "trades": 4,
+        "wins": 1,
+        "winrate_percent": 25.0,
+        "net_R": -1.0
+      },
+      "51-100": {
+        "trades": 4,
+        "wins": 0,
+        "winrate_percent": 0.0,
+        "net_R": -4.0
+      },
+      ">1000": {
+        "trades": 4,
+        "wins": 3,
+        "winrate_percent": 75.0,
+        "net_R": 5.0
+      }
+    },
+    "retest_score": {
+      "60-69.9": {
+        "trades": 2,
+        "wins": 1,
+        "winrate_percent": 50.0,
+        "net_R": 1.0
+      },
+      "70-79.9": {
+        "trades": 14,
+        "wins": 4,
+        "winrate_percent": 28.57,
+        "net_R": -2.0
+      },
+      "80-89.9": {
+        "trades": 6,
+        "wins": 2,
+        "winrate_percent": 33.33,
+        "net_R": 0.0
+      }
+    }
+  },
+  "data_source": "MetaTrader 5 terminal"
+}
